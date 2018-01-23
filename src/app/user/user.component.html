@@ -1,0 +1,15 @@
+<app-menu></app-menu>
+ <alert></alert>
+<div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.data.first_name}}!</h1>
+    <p>Welcome you are successfully logged in!</p>
+    <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.first_name}} {{user.last_name}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+   <!--  <p><a [routerLink]="['/login']">Logout</a></p> -->
+   <p><a (click)="logoutUser()">Logout</a></p>
+</div>
